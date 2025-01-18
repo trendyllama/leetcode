@@ -1,4 +1,4 @@
-'''
+"""
 Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
 
 Symbol       Value
@@ -49,36 +49,31 @@ Constraints:
 1 <= s.length <= 15
 s contains only the characters ('I', 'V', 'X', 'L', 'C', 'D', 'M').
 It is guaranteed that s is a valid roman numeral in the range [1, 3999].
-'''
+"""
 
 
 class Solution:
-
-    mapping = {
-        'I': 1,
-        'V': 5,
-        'X': 10,
-        'L': 50,
-        'C': 100,
-        'D': 500,
-        'M': 1000
-    }
+    mapping = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}
 
     def __init__(self):
         pass
 
     def roman_numeral_to_int(self, numeral: str) -> int:
+        if len(numeral) < 1:
+            raise ValueError("undefined for string inputs less than 1 chars")
+
+        if len(numeral) > 15:
+            raise ValueError("undefined for string inputs longer than 15 chars")
 
         result = 0
 
         for idx, char in enumerate(numeral):
-
             try:
-                if numeral[idx + 1] in ['V', 'X'] and char == 'I':
+                if numeral[idx + 1] in ["V", "X"] and char == "I":
                     result -= self.mapping[char]
-                elif numeral[idx + 1] in ['L', 'C'] and char == 'X':
+                elif numeral[idx + 1] in ["L", "C"] and char == "X":
                     result -= self.mapping[char]
-                elif numeral[idx + 1] in ['D', 'M'] and char == 'C':
+                elif numeral[idx + 1] in ["D", "M"] and char == "C":
                     result -= self.mapping[char]
                 else:
                     result += self.mapping[char]
