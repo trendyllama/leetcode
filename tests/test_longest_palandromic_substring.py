@@ -1,4 +1,4 @@
-'''
+"""
 Example 1:
 
 Input: s = "babad"
@@ -9,11 +9,12 @@ Example 2:
 Input: s = "cbbd"
 Output: "bb"
 
-'''
+"""
+
 from src.easy.longest_palandromic_substring import is_palandrome, get_largest_palandrome
 
-def test_is_palandrome():
 
+def test_is_palandrome():
     assert is_palandrome("babad") is False
     assert is_palandrome("cbbd") is False
     assert is_palandrome("racecar")
@@ -29,6 +30,8 @@ def test_is_palandrome():
 
 
 def test_get_largest_palandrome():
-
-    assert get_largest_palandrome("babad") == "bab" or get_largest_palandrome("babad") == "aba"
+    assert (
+        get_largest_palandrome("babad") == "bab"
+        or get_largest_palandrome("babad") == "aba"
+    )
     assert get_largest_palandrome("cbbd") == "bb"

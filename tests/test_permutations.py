@@ -19,7 +19,7 @@ def test_example2():
     Input: nums = [0,1]
     Output: [[0,1],[1,0]]
     '''
-    pass
+    assert Solution().permute([0, 1]) == [[0,1],[1,0]]
 
 
 def test_example3():
@@ -27,6 +27,7 @@ def test_example3():
     Example 3:
 
     Input: nums = [1]
-    Output: [[1]]
+    Output: [[1]
     '''
-    pass
+
+    assert Solution().permute([1]) == [[1]]
