@@ -62,3 +62,17 @@ def get_largest_palandrome(input_string: str) -> str:
         return ""
 
     return max(palandromes, key=len)
+
+def smart_get_largest_palandrome(input_string: str) -> str:
+  '''
+  this can be acheived with a similar backbone as the brute force method
+
+  - a possible solution is once we find the smallest palandrome at index [m, n]
+    we can check if [m-1, n+1] is a palandrome, [m-2, n+2], ... and so on
+    when [m-i, n+i] is not a palandrome, we have found the largest palandrome
+    therefore we do not need to do O(N^2) steps
+
+  - a case a am not considering is if there are more than one discrete
+    palandromes in the string
+  '''
+  pass
