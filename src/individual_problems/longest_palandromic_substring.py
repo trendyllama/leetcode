@@ -63,16 +63,44 @@ def get_largest_palandrome(input_string: str) -> str:
 
     return max(palandromes, key=len)
 
+def expand_search_after_finding_palandrome(input_string) -> str:
+
+   pass
+
 def smart_get_largest_palandrome(input_string: str) -> str:
   '''
   this can be acheived with a similar backbone as the brute force method
 
   - a possible solution is once we find the smallest palandrome at index [m, n]
     we can check if [m-1, n+1] is a palandrome, [m-2, n+2], ... and so on
-    when [m-i, n+i] is not a palandrome, we have found the largest palandrome
-    therefore we do not need to do O(N^2) steps
-
-  - a case a am not considering is if there are more than one discrete
-    palandromes in the string
+    when [m-i, n+i] is not a palandrome, we have found a *local* largest palandrome
+  - we can then resume our search at n+i
+ 
   '''
-  pass
+    if not input_string.isalpha() or not input_string.islower():
+        raise ValueError("all characters of the input string must be letters")
+
+    if len(input_string) < 0:
+        raise ValueError("unexpected input of string with a negative length")
+
+    if len(input_string) == 0:
+        return ""
+
+    if len(input_string) == 1:
+        return input_string
+
+    if len(input_string) > 1000:
+        raise ValueError("undefined for string inputs longer than 1000 chars")
+
+   palandromes = set()
+
+    for idx, _ in enumerate(input_string):
+        for idx2, _ in enumerate(input_string):
+            if is_palandrome(input_string[idx:idx2]):
+              expand_search_after_finding_palandrome(input_string, start_index, end_index)
+                
+
+     if len(palandromes) < 1:
+        return ""
+
+    return max(palandromes, key=len)
