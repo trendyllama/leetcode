@@ -5,8 +5,6 @@ palindromic
 substring
  in s.
 
-
-
 Example 1:
 
 Input: s = "babad"
@@ -16,7 +14,6 @@ Example 2:
 
 Input: s = "cbbd"
 Output: "bb"
-
 
 Constraints:
 
@@ -29,16 +26,27 @@ def reverse_string(input_string: str) -> str:
 
 def is_palandrome(input_string: str) -> bool:
 
-
     if input_string == reverse_string(input_string):
         return True
 
     return False
 
 def get_largest_palandrome(input_string: str) -> str:
+    '''
+    brute force method
+    '''
 
-    if len(input_string) < 1:
-        raise ValueError("undefined for string inputs less than 1 chars")
+    if not input_string.isalpha() or not input_string.islower():
+        raise ValueError("all characters of the input string must be letters")
+
+    if len(input_string) < 0:
+        raise ValueError("unexpected input of string with a negative length")
+
+    if len(input_string) == 0:
+        return ""
+
+    if len(input_string) == 1:
+        return input_string
 
     if len(input_string) > 1000:
         raise ValueError("undefined for string inputs longer than 1000 chars")
@@ -54,4 +62,3 @@ def get_largest_palandrome(input_string: str) -> str:
         return ""
 
     return max(palandromes, key=len)
-
