@@ -17,7 +17,7 @@ def test_is_palandrome():
     assert is_palandrome("babad") is False
     assert is_palandrome("cbbd") is False
     assert is_palandrome("racecar")
-    assert is_palandrome("a") is False
+    assert is_palandrome("a")
     assert is_palandrome("ab") is False
     assert is_palandrome("abc") is False
     assert is_palandrome("level")

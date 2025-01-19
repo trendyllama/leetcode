@@ -1,6 +1,6 @@
 '''
-Given an array of integers nums and an integer target, return indices of the two numbers
-such that they add up to target.
+Given an array of integers nums and an integer target,
+return indices of the two numbers such that they add up to target.
 
 You may assume that each input would have exactly one solution,
 and you may not use the same element twice.
@@ -32,25 +32,31 @@ Constraints:
 Only one valid answer exists.
 
 
-Follow-up: Can you come up with an algorithm that is less than O(n2) time complexity?
+Follow-up: Can you come up with an algorithm that is less
+than O(n2) time complexity?
 '''
 
 class Solution:
     '''
-    represents the implementation and tests of the solution
+    represents the implementation of the solution
+
+    also can be extened to include the faster solution
     '''
 
     def two_sums(self, nums: list[int], target: int) -> list[int] | None:
 
-        if len(nums) < 2 or len(nums) < 104:
+        if len(nums) < 2:
             raise ValueError
 
-        for idx1, _ in enumerate(nums):
-            for idx2, _ in enumerate(nums):
-                if sum([idx1, idx2]) == target:
+        if len(nums) > 104:
+            raise ValueError
+
+        for idx1, val1 in enumerate(nums):
+            for idx2, val2 in enumerate(nums):
+                if idx1 == idx2:
+                    continue
+
+                if val1 == (target - val2):
                     return [idx1, idx2]
 
         return None
-
-    def test_solution(self):
-        pass
