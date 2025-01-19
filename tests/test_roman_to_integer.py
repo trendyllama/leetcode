@@ -1,4 +1,4 @@
-from src.individual_problems.roman_to_integer import Solution
+from src.easy.roman_to_integer import Solution
 
 
 class TestRomanToInteger:

@@ -10,7 +10,7 @@ Input: s = "cbbd"
 Output: "bb"
 
 '''
-from src.individual_problems.longest_palandromic_substring import is_palandrome, get_largest_palandrome
+from src.easy.longest_palandromic_substring import is_palandrome, get_largest_palandrome
 
 def test_is_palandrome():
 

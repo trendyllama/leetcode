@@ -1,7 +1,7 @@
 '''
 tests for src/individual_problems/two_sums.py
 '''
-from src.individual_problems.two_sums import Solution
+from src.easy.two_sums import Solution
 
 def test_solution():
 
