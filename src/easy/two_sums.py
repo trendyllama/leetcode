@@ -43,6 +43,16 @@ class Solution:
     """
 
     def two_sums(self, nums: list[int], target: int) -> list[int] | None:
+        """
+
+        Examples:
+        >>> Solution().two_sums([2, 7, 11, 15], 9) == [0, 1]
+        True
+        >>> Solution().two_sums([3, 2, 4], 6) == [1, 2]
+        True
+        >>> Solution().two_sums([3, 3], 6) == [0, 1]
+        True
+        """
         if len(nums) < 2:
             raise ValueError
 

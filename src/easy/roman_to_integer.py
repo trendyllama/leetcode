@@ -54,6 +54,22 @@ It is guaranteed that s is a valid roman numeral in the range [1, 3999].
 
 
 class Solution:
+    """
+
+    Examples:
+
+    >>> Solution().roman_numeral_to_int("III")
+    3
+    >>> Solution().roman_numeral_to_int("IV")
+    4
+    >>> Solution().roman_numeral_to_int("IX")
+    9
+    >>> Solution().roman_numeral_to_int("LVIII")
+    58
+    >>> Solution().roman_numeral_to_int("MCMXCIV")
+    1994
+    """
+
     mapping = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}
 
     def __init__(self):

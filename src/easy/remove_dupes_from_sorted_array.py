@@ -1,4 +1,4 @@
-'''
+"""
 Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place
 such that each unique element appears only once. The relative order of the elements should be kept the same.
 Then return the number of unique elements in nums.
@@ -44,11 +44,20 @@ Constraints:
 -100 <= nums[i] <= 100
 nums is sorted in non-decreasing order.
 
-'''
+"""
 
 
 class Solution:
     def removeDuplicates(self, nums: list[int]) -> tuple[int, list]:
+        """
+        Examples:
+        >>> Solution().removeDuplicates([1, 1, 2])
+        (2, [1, 2, 0])
+
+        >>> Solution().removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4])
+        (5, [0, 1, 2, 3, 4, 0, 0, 0, 0, 0])
+
+        """
 
         if not all((100 >= num >= -100) for num in nums):
             raise ValueError
@@ -56,18 +65,15 @@ class Solution:
         if not nums == sorted(nums):
             raise ValueError
 
-
         output_list = []
         num_unique_elements = 0
 
         for num in nums:
-
             if num not in output_list:
                 output_list.append(num)
                 num_unique_elements += 1
 
         while len(output_list) < len(nums):
-
             output_list.append(0)
 
         return num_unique_elements, output_list
