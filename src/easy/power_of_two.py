@@ -59,7 +59,7 @@ def is_power_of_two(n: int) -> bool:
 
     bit_str = bin(n).split('b')[-1]
 
-    if n == 1:
+    if bit_str == "1":
         return True
 
     return bit_str[0] == "1" and all(char == '0' for char in bit_str[1:])
